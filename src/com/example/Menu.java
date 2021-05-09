@@ -14,7 +14,7 @@ public class Menu {
         //kies een optie
         System.out.println("====================================================");
         System.out.println("1) Recept aanmaken");
-        System.out.println("2) Recepten lijst opvragen");
+        System.out.println("2) Registreren");
         System.out.println("3) Recept opvragen op naam");
         System.out.println("====================================================");
         System.out.println("Voer het cijfer in!");
@@ -32,7 +32,7 @@ public class Menu {
 
         switch (input) {
             case 1:
-                System.out.println("Nieuw recept aanmaken");
+                System.out.println("Account aanmaken");
                 System.out.println("====================================================");
                 System.out.println("Voer de naam van het recept in");
                 String naam = scanner.nextLine();
@@ -44,7 +44,14 @@ public class Menu {
                 Recept aangemaakteRecept = new Recept(naam, ingredienten, bereidingswijze);
                 break;
             case 2:
-                System.out.println("Lijst met studenten");
+                System.out.println("Registreren");
+                System.out.println("====================================================");
+                System.out.println("Voer de naam van je kook boek in");
+                String naamkookboek = scanner.nextLine();
+                Kookboek kookboek=new Kookboek("Gijs zijn kookboek");
+                System.out.println("Voer je leeftijd in");
+                int leeftijd = scanner.nextInt();
+                kookboek.accountVoorwaarden(leeftijd);
                 break;
             case 3:
                 System.out.println("Nieuwe student inschrijven");
