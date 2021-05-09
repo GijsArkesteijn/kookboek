@@ -15,6 +15,16 @@ public class Kookboek {
         this.naam=naam;
     }
     public String accountVoorwaarden(int leeftijd){
-
+        String returnwaarde=null;
+        if (leeftijd<=8){
+            returnwaarde= "Uw account is gratis aan te maken";
+        }
+        if (leeftijd>8&&leeftijd<18){
+            returnwaarde= "Uw Account kost 2,50";
+        }
+        if(leeftijd>=18){
+            returnwaarde= "Uw Account kost 5,00";
+        }
+        return returnwaarde;
     }
 }
