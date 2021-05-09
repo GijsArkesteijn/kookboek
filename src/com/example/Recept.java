@@ -13,6 +13,9 @@ public class Recept {
         this.bereidingswijze=bereidingswijze;
     }
     public String receptAanpassen(String naam, String ingredienten, String bereidingswijze){
-
+        this.naam=naam;
+        this.ingredienten=ingredienten;
+        this.bereidingswijze=bereidingswijze;
+        return naam;
     }
 }
