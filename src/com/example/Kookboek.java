@@ -27,4 +27,36 @@ public class Kookboek {
         }
         return returnwaarde;
     }
+
+    public String tooString(double a){
+        return a+"0";
+    }
+    public String kostenBerekenen(int leeftijd, int recepten, boolean share, int aantalboeken){
+        double totaal=0;
+        if (leeftijd<=8){
+            totaal= totaal+0;
+        }
+        else if (leeftijd>=9&&leeftijd<18){
+            totaal= totaal+2.5;
+        }
+        else if(leeftijd>=18){
+            totaal= totaal+5.0;
+        }
+
+        if (recepten>10){
+            totaal= totaal+5.0;
+        }
+
+        if (share){
+            totaal=totaal+6.5;
+        }
+
+        if (aantalboeken>1){
+            totaal=totaal+10.0;
+        }
+
+        return tooString(totaal);
+    }
+
 }
+
