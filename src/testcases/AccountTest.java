@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class AccountTest {
 
     @Test
-    public void getAangemaakteRecept() {
+    public void getAccountKosten() {
         Kookboek kookboek = new Kookboek("nieuw kookboek");
         Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(0));
         Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(1));
