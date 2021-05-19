@@ -12,17 +12,16 @@ public class Recept {
         this.ingredienten=ingredienten;
         this.bereidingswijze=bereidingswijze;
     }
-    public String receptAanpassen(String naam, String ingredienten, String bereidingswijze){
-        if(naam.equals("")||ingredienten.equals("")||bereidingswijze.equals("")){
-            return "error";
-        }
-        else {
-            this.naam = naam;
-            this.ingredienten = ingredienten;
-            this.bereidingswijze = bereidingswijze;
-            return naam;
-        }
 
+    public String getNaam() {
+        return naam;
     }
 
+    public String getBereidingswijze() {
+        return bereidingswijze;
+    }
+
+    public String getIngredienten() {
+        return ingredienten;
+    }
 }
