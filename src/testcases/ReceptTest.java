@@ -1,6 +1,5 @@
 package testcases;
 
-import com.example.Menu;
 import com.example.Recept;
 import org.junit.Assert;
 import org.junit.Test;
