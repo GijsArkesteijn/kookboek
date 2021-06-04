@@ -6,26 +6,39 @@ public class Kookboek {
     String naam;
     ArrayList<Recept> recepten;
     public Kookboek(String naam){
-        this.naam=naam;
         this.recepten=new ArrayList<Recept>();
-        recepten.add(new Recept("boerenkool", "aardappel en boerenkool","lang koken enzo"));
-        recepten.add(new Recept("kip met rijst", "Kip en rijst","koken en bakken en klaar"));
-        recepten.add(new Recept("Recept naam", "ingredienten","bereidingswijze"));
+        if (naam.equals("Gijs zijn kookboek")){
+            recepten.add(new Recept("boerenkool", "aardappel en boerenkool","Koken"));
+            recepten.add(new Recept("kip met rijst", "Kip en rijst","Stomen"));
+            recepten.add(new Recept("Recept naam", "ingredienten","Koken"));
+        }
+        else if(naam.equals("Kees zijn kookboek")){
+
+            recepten.add(new Recept("Vies", "aardappel en boerenkool","Koken"));
+            recepten.add(new Recept("Smerig", "Kip en rijst","Stomen"));
+        }
+        recepten.add(new Recept("standaart recept", "ingredienten","Stomen"));
+        this.naam=naam;
     }
 
     public String getNaam() {
         return naam;
     }
 
+    public Recept getReceptenObjecten(int receptNummer) {
+        Recept recept=null;
+        for(int i=1; i<recepten.size();i++){
+            if(receptNummer==i){
+                recept= recepten.get(i);
+            }
+        }
+        return recept;
+    }
     public String getRecepten() {
         String recepte="";
-        for(Recept recept : recepten){
-            if (recepte.equals("")){
+        for(int i=1; i<recepten.size();i++){
+                recepte = recepte+i+": "+ recepten.get(i).getNaam()+"\n";
 
-                recepte = recepte+ recept.getNaam();
-            }else{
-                recepte = recepte+", "+ recept.getNaam();
-            }
         }
         return recepte;
     }

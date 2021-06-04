@@ -7,9 +7,10 @@ public class Gebruiker {
     private String wachtwoord;
     private Kookboek kookboek;
     public Gebruiker( String gebruikersnaam, String wachtwoord, Kookboek boek){
-        this.gebruikersnaam=gebruikersnaam;
-        this.wachtwoord=wachtwoord;
-        this.kookboek=boek;
+            this.gebruikersnaam=gebruikersnaam;
+            this.wachtwoord=wachtwoord;
+            this.kookboek=boek;
+
     }
     public String getGebruikersnaam() {
         return gebruikersnaam;
@@ -21,5 +22,10 @@ public class Gebruiker {
 
     public Kookboek getKookboek() {
         return kookboek;
+    }
+
+
+    public boolean isWachtwoordCorrect (String password) {
+        return password.equals (this.wachtwoord);
     }
 }
