@@ -59,14 +59,10 @@ public class Menu {
                 Recept teBereidenRecept = gebruiker.getKookboek().getReceptenObjecten(receptNummer);
                 ArrayList<Kok> koks= keuken.getKoks();
                 if (teBereidenRecept.getBereidingswijze().equals("Stomen")){
-                    System.out.println(teBereidenRecept.getNaam());
-                    System.out.println(koks.get(0).getNaam());
-                    System.out.println( koks.get(0).klaarmaken());
+                    System.out.println(koks.get(0).klaarmaken(teBereidenRecept));
                 }
                 else if(teBereidenRecept.getBereidingswijze().equals("Koken")){
-                    System.out.println(teBereidenRecept.getNaam());
-                    System.out.println(koks.get(1).getNaam());
-                    System.out.println(koks.get(1).klaarmaken());
+                    System.out.println(koks.get(1).klaarmaken(teBereidenRecept));
                 }
                 break;
         }

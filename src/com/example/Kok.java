@@ -5,10 +5,8 @@ public abstract class Kok {
     public Kok(String naam){
         this.naam= naam;
     }
-    public String klaarmaken(){
+    public abstract String klaarmaken(Recept recept);
 
-        return "Wordt klaargemaakt";
-    }
     public String getNaam(){
         return naam;
     }

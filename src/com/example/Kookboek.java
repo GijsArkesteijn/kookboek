@@ -8,7 +8,6 @@ public class Kookboek {
     public Kookboek(String naam){
         this.recepten=new ArrayList<Recept>();
         if (naam.equals("Gijs zijn kookboek")){
-            recepten.add(new Recept("boerenkool", "aardappel en boerenkool","Koken"));
             recepten.add(new Recept("kip met rijst", "Kip en rijst","Stomen"));
             recepten.add(new Recept("Recept naam", "ingredienten","Koken"));
         }
@@ -36,8 +35,8 @@ public class Kookboek {
     }
     public String getRecepten() {
         String recepte="";
-        for(int i=1; i<recepten.size();i++){
-                recepte = recepte+i+": "+ recepten.get(i).getNaam()+"\n";
+        for(int i=0; i<recepten.size();i++){
+                recepte = recepte+(i+1)+": "+ recepten.get(i).getNaam()+"\n";
 
         }
         return recepte;

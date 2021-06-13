@@ -6,7 +6,7 @@ public class StoomKok extends Kok {
     }
 
     @Override
-    public String klaarmaken() {
-        return "Wordt gestoomd";
+    public String klaarmaken(Recept recept) {
+        return recept.getNaam()+ " wordt gestoomd";
     }
 }

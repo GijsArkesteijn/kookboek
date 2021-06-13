@@ -48,12 +48,10 @@ public class LoginAuthenticator {
             Scanner scanner = new Scanner(System.in);
 
             for (int i = 0; i < 5; i++) {
-                System.out.println ("=================");
                 System.out.print("Wat is je gebruikersnaam? ");
                 String userName = scanner.nextLine();
                 System.out.print ("Wat is je wachtwoord? ");
                 String password = scanner.nextLine();
-                System.out.println ("=================");
                 if (gebruikerExists (userName) && this.gebruiker.isWachtwoordCorrect(password)) {
                     System.out.println ("Ingelogd");
                     this.gebruiker = keuken.getGebruiker(userName);

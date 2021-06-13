@@ -1,5 +1,6 @@
 package testcases;
 
+import com.example.Gebruiker;
 import com.example.Kookboek;
 import com.example.Recept;
 import org.junit.Assert;
@@ -12,15 +13,12 @@ import java.math.BigDecimal;
 public class GebruikerTest {
 
     @Test
-    public void getAccountKosten() {
-//        Kookboek kookboek = new Kookboek("nieuw kookboek");
-//        Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(0));
-//        Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(1));
-//        Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(7));
-//        Assert.assertEquals("Uw account is gratis aan te maken", kookboek.accountVoorwaarden(8));
-//        Assert.assertEquals("Uw Account kost 2,50", kookboek.accountVoorwaarden(9));
-//        Assert.assertEquals("Uw Account kost 2,50", kookboek.accountVoorwaarden(17));
-//        Assert.assertEquals("Uw Account kost 5,00", kookboek.accountVoorwaarden(18));
-//        Assert.assertEquals("Uw Account kost 5,00", kookboek.accountVoorwaarden(19));
+    public void getAccountGegevens() {
+        Kookboek kookboek = new Kookboek("nieuw kookboek");
+        Gebruiker gebruiker = new Gebruiker("Kees", "a", kookboek);
+        Assert.assertEquals("Kees", gebruiker.getGebruikersnaam());
+        Assert.assertEquals("a", gebruiker.getWachtwoord());
+        Assert.assertTrue( gebruiker.isWachtwoordCorrect("a"));
+        Assert.assertFalse( gebruiker.isWachtwoordCorrect("b"));
     }
 }

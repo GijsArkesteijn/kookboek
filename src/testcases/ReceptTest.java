@@ -1,5 +1,6 @@
 package testcases;
 
+import com.example.Kookboek;
 import com.example.Recept;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,10 +10,16 @@ import org.junit.Test;
 public class ReceptTest {
 
     @Test
-    public void getAangepasteRecept() {
-//        Recept boerenkool = new Recept("stamppot","aardappelen en nog meer dingen","gewoon koken enzo");
-//        Assert.assertEquals("Boerenkool",boerenkool.receptAanpassen("Boerenkool","1kg boerenkool, 1kg aardappelen, 100g spekjes","kook de aardappelen en boerenkool gaar. Bak daarna de spekjes voor 4 min"));
-//        Assert.assertEquals("error",boerenkool.receptAanpassen("","1kg boerenkool, 1kg aardappelen, 100g spekjes","kook de aardappelen en boerenkool gaar. Bak daarna de spekjes voor 4 min"));
-//        Assert.assertEquals("error",boerenkool.receptAanpassen("Boerenkool","","kook de aardappelen en boerenkool gaar. Bak daarna de spekjes voor 4 min"));
+    public void getReceptenBekijken() {
+        Kookboek kookboek = new Kookboek("Gijs zijn kookboek");
+        Kookboek kookboek2 = new Kookboek("Kees zijn kookboek");
+        Assert.assertEquals("1: kip met rijst\n" +
+                "2: Recept naam\n" +
+                "3: standaart recept\n", kookboek.getRecepten()
+        );
+        Assert.assertEquals("1: Vies\n" +
+                "2: Smerig\n" +
+                "3: standaart recept\n", kookboek2.getRecepten()
+        );
     }
 }
