@@ -23,7 +23,7 @@ public class Keuken {
     }
 
     public String getGebruikersLijst() {
-        String goeie = "";
+        String goeie = null;
 
         for (Gebruiker gebruiker : gebruikers) {
             if (goeie.equals("")){

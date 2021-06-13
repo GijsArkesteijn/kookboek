@@ -26,7 +26,7 @@ public class Kookboek {
 
     public Recept getReceptenObjecten(int receptNummer) {
         Recept recept=null;
-        for(int i=1; i<recepten.size();i++){
+        for(int i=0; i<recepten.size();i++){
             if(receptNummer==i){
                 recept= recepten.get(i);
             }
