@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Keuken {
     private ArrayList<Gebruiker> gebruikers;
     private ArrayList<Kok> koks;
+
     public Keuken(){
         this.gebruikers=new ArrayList();
         Gebruiker Gijs = new Gebruiker("Gijs","x",new Kookboek("Gijs zijn kookboek"));

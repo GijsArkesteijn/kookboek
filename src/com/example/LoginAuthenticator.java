@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class LoginAuthenticator {
 
     private static LoginAuthenticator singleton;
-    private ArrayList<Gebruiker> gebruikers;
     private Gebruiker gebruiker;
     private boolean authenticated;
     private Keuken keuken;
@@ -14,8 +13,6 @@ public class LoginAuthenticator {
     private LoginAuthenticator() {
         this.keuken=new Keuken();
         authenticated=false;
-        gebruikers = new ArrayList<> ();
-        gebruikers.addAll(keuken.getGebruikersObjecten());
         gebruiker = null;
     }
 
@@ -32,7 +29,7 @@ public class LoginAuthenticator {
 
     private boolean gebruikerExists (String name) {
 
-        for (Gebruiker gebruiker : gebruikers) {
+        for (Gebruiker gebruiker : keuken.getGebruikersObjecten()) {
             if (gebruiker.getGebruikersnaam ().equals (name)) {
                 this.gebruiker = gebruiker;
                 return true;
