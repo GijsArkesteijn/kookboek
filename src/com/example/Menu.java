@@ -49,20 +49,21 @@ public class Menu {
             case 1:
                 System.out.println("gebruikers lijst bekijken");
                 System.out.println("====================================================");
-                System.out.println(keuken.getGebruikersLijst());
+                keuken.printGebruikersLijst();
 
                 break;
             case 2:
                 System.out.println("Recepten bekijken");
                 System.out.println("====================================================");
-                System.out.println(keuken.getGebruiker(loginAuthenticator.getLoggedInGebruiker().getGebruikersnaam()).getKookboek().getRecepten());
+                keuken.printRecepten();
 
                 break;
             case 3:
                 System.out.println("Recept bereiden");
                 System.out.println("====================================================");
                 System.out.println("Kies een recept");
-                System.out.println(keuken.getGebruiker(loginAuthenticator.getLoggedInGebruiker().getGebruikersnaam()).getKookboek().getRecepten());
+                keuken.printRecepten();
+
                 int receptNummer =scanner.nextInt()-1;
 
                 Recept teBereidenRecept = keuken.getGebruiker(loginAuthenticator.getLoggedInGebruiker().getGebruikersnaam()).getKookboek().getReceptenObjecten(receptNummer);

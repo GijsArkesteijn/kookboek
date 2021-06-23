@@ -24,16 +24,17 @@ public class Keuken {
 
     public String getGebruikersLijst() {
         String goeie = null;
-
         for (Gebruiker gebruiker : gebruikers) {
-            if (goeie.equals("")){
-
-                goeie = goeie+ gebruiker.getGebruikersnaam();
-            }else{
-                goeie = goeie+", "+ gebruiker.getGebruikersnaam();
-            }
+            goeie += (gebruiker.equals("") ? "" : ", ");
+            goeie += gebruiker.getGebruikersnaam();
         }
         return goeie;
+    }
+    public void printGebruikersLijst(){
+        System.out.println(getGebruikersLijst());
+    }
+    public void printRecepten(){
+        System.out.println(LoginAuthenticator.getInstance().getLoggedInGebruiker().getKookboek().getRecepten()) ;
     }
     public ArrayList<Gebruiker> getGebruikersObjecten(){
         return gebruikers;
