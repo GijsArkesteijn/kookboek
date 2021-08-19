@@ -24,7 +24,7 @@ public class Kookboek {
         return naam;
     }
 
-    public Recept getReceptenObjecten(int receptNummer) {
+    public Recept getReceptenObjectOpNummer(int receptNummer) {
         Recept recept=null;
         for(int i=0; i<recepten.size();i++){
             if(receptNummer==i){
@@ -33,11 +33,11 @@ public class Kookboek {
         }
         return recept;
     }
+
     public String getRecepten() {
         String recepte="";
         for(int i=0; i<recepten.size();i++){
                 recepte = recepte+(i+1)+": "+ recepten.get(i).getNaam()+"\n";
-
         }
         return recepte;
     }

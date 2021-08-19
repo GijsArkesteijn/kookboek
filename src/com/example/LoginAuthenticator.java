@@ -39,6 +39,10 @@ public class LoginAuthenticator {
         return false;
     }
 
+    public Keuken getKeuken() {
+        return keuken;
+    }
+
     public boolean isAuthenticated () {
         if (authenticated ) {
             return true;

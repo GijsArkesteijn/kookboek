@@ -1,10 +1,13 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Keuken {
     private ArrayList<Gebruiker> gebruikers;
     private ArrayList<Kok> koks;
+    LoginAuthenticator loginAuthenticator;
+    Scanner scanner = new Scanner(System.in);
 
     public Keuken(){
         this.gebruikers=new ArrayList();
@@ -22,20 +25,27 @@ public class Keuken {
         koks.add(kookKok);
     }
 
+    public String printBereidingDoorKok(){
+        printRecepten();
+        int receptNummer =scanner.nextInt()-1;
+        loginAuthenticator = LoginAuthenticator.getInstance ();
+        Recept teBereidenRecept = getGebruiker(loginAuthenticator.getLoggedInGebruiker().getGebruikersnaam()).getKookboek().getReceptenObjectOpNummer(receptNummer);
+        String bereidingDoorKok = teBereidenRecept.bereidenReceptDoorKok(teBereidenRecept,getKoks());
+
+        return bereidingDoorKok;
+    }
+
     public String getGebruikersLijst() {
-        String goeie = null;
+        String gerbruikers = null;
         for (Gebruiker gebruiker : gebruikers) {
-            goeie += (gebruiker.equals("") ? "" : ", ");
-            goeie += gebruiker.getGebruikersnaam();
+            gerbruikers += (gebruiker.equals("") ? "" : ", ");
+            gerbruikers += gebruiker.getGebruikersnaam();
         }
-        return goeie;
+        return gerbruikers;
     }
-    public void printGebruikersLijst(){
-        System.out.println(getGebruikersLijst());
-    }
-    public void printRecepten(){
-        System.out.println(LoginAuthenticator.getInstance().getLoggedInGebruiker().getKookboek().getRecepten()) ;
-    }
+
+    public void printRecepten(){ System.out.println(LoginAuthenticator.getInstance().getLoggedInGebruiker().getKookboek().getRecepten()) ; }
+
     public ArrayList<Gebruiker> getGebruikersObjecten(){
         return gebruikers;
     }
@@ -45,12 +55,12 @@ public class Keuken {
     }
 
     public Gebruiker getGebruiker(String naam) {
-        Gebruiker goeie = null;
+        Gebruiker gebruiker = null;
         for (Gebruiker student : gebruikers) {
             if (naam.equals( student.getGebruikersnaam())) {
-                goeie = student;
+                gebruiker = student;
             }
         }
-        return goeie;
+        return gebruiker;
     }
 }

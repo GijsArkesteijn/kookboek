@@ -20,8 +20,12 @@ public class Recept {
     public String getBereidingswijze() {
         return bereidingswijze;
     }
+    public String bereidenReceptDoorKok(Recept teBereidenRecept, ArrayList<Kok> koks){
+        int index = 0;
 
-    public String getIngredienten() {
-        return ingredienten;
+        if(teBereidenRecept.getBereidingswijze().equals("Koken")){
+            index=1;
+        }
+        return koks.get(index).klaarmaken(teBereidenRecept);
     }
 }

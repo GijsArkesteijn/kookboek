@@ -7,6 +7,6 @@ public class KookKok extends Kok {
 
     @Override
     public String klaarmaken(Recept recept) {
-        return recept.getNaam()+" wordt gekookt";
+        return recept.getNaam()+" wordt gekookt door kok "+ this.getNaam();
     }
 }
