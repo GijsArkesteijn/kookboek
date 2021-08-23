@@ -25,26 +25,35 @@ public class Keuken {
         koks.add(kookKok);
     }
 
-    public String printBereidingDoorKok(){
+    public void printBereidingDoorKok(){
         printRecepten();
         int receptNummer =scanner.nextInt()-1;
         loginAuthenticator = LoginAuthenticator.getInstance ();
         Recept teBereidenRecept = getGebruiker(loginAuthenticator.getLoggedInGebruiker().getGebruikersnaam()).getKookboek().getReceptenObjectOpNummer(receptNummer);
         String bereidingDoorKok = teBereidenRecept.bereidenReceptDoorKok(teBereidenRecept,getKoks());
 
-        return bereidingDoorKok;
+        System.out.println("Recept bereiden");
+        System.out.println("====================================================");
+        System.out.println("Kies een recept");
+        System.out.println(bereidingDoorKok);
     }
 
-    public String getGebruikersLijst() {
+    public void printGebruikersLijst() {
         String gerbruikers = null;
         for (Gebruiker gebruiker : gebruikers) {
             gerbruikers += (gebruiker.equals("") ? "" : ", ");
             gerbruikers += gebruiker.getGebruikersnaam();
         }
-        return gerbruikers;
+        System.out.println("gebruikers lijst bekijken");
+        System.out.println("====================================================");
+        System.out.println( gerbruikers);
     }
 
-    public void printRecepten(){ System.out.println(LoginAuthenticator.getInstance().getLoggedInGebruiker().getKookboek().getRecepten()) ; }
+    public void printRecepten(){
+        System.out.println("Recepten bekijken");
+        System.out.println("====================================================");
+        System.out.println(LoginAuthenticator.getInstance().getLoggedInGebruiker().getKookboek().getRecepten()) ;
+    }
 
     public ArrayList<Gebruiker> getGebruikersObjecten(){
         return gebruikers;
